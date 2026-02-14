@@ -1,0 +1,164 @@
+.vote-page {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/* Header */
+
+.vote-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.vote-header h1 {
+  font-size: 36px;
+  font-weight: 900;
+}
+
+.subtitle {
+  opacity: 0.7;
+}
+
+/* Refresh */
+
+.refresh-btn {
+  border: none;
+  background: rgba(255,255,255,0.08);
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+}
+
+.refresh-btn:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* Cards */
+
+.vote-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.vote-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 22px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Winner */
+
+.vote-card.winner {
+  border-color: rgba(245,158,11,0.5);
+  background: rgba(245,158,11,0.08);
+  box-shadow: 0 0 25px rgba(245,158,11,0.3);
+}
+
+/* Left */
+
+.candidate-left {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.rank-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.05);
+  font-weight: bold;
+}
+
+.rank-winner {
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  box-shadow: 0 0 20px rgba(245,158,11,0.5);
+}
+
+/* Right */
+
+.candidate-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.vote-count {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+/* Progress */
+
+.progress-bar {
+  width: 180px;
+  height: 6px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #22d3ee);
+}
+
+/* Loader */
+
+.vote-loader {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Gradient Text */
+
+.gradient-text {
+  background: linear-gradient(90deg,#6366f1,#22d3ee,#f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Spinner */
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .vote-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .candidate-right {
+    align-items: flex-start;
+  }
+}
