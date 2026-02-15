@@ -24,10 +24,14 @@ const Candidates = () => {
         api.get('/candidates/candidates'),
         api.get('/users/profile')
       ]);
+      const sortedCandidates = candRes.data.candidates.sort((a, b) =>
+      a.name.localeCompare(b.name)
+      );
 
-      setCandidates(candRes.data.candidates);
+      setCandidates(sortedCandidates);
+
       setUserProfile(profileRes.data.user);
-    } catch {
+    } catch (err) {
       setMessage({ text: 'Failed to load data', type: 'error' });
     } finally {
       setLoading(false);

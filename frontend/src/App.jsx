@@ -12,7 +12,7 @@ import VoteCount from './pages/VoteCount';
 import Profile from './pages/Profile';
 import Admin from './pages/Admin';
 
-import Home from './pages/Home';
+import Home from './pages/Home'; 
 
 function App() {
   return (

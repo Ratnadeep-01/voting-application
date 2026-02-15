@@ -27,7 +27,11 @@ const Admin = () => {
   const fetchCandidates = async () => {
     try {
       const { data } = await api.get('/candidates/candidates');
-      setCandidates(data.candidates);
+      const sortedCandidates = data.candidates.sort((a, b) =>
+      a.name.localeCompare(b.name)
+    );
+
+    setCandidates(sortedCandidates);
     } catch (err) {
       console.error(err);
     } finally {
@@ -184,7 +188,7 @@ const Admin = () => {
             <div className="stat-card">
               <Users size={22} />
               <div>
-                <span>Total Candidates</span>
+                <span>Total Candidates - </span>
                 <strong>{candidates.length}</strong>
               </div>
             </div>
@@ -192,7 +196,7 @@ const Admin = () => {
             <div className="stat-card">
               <PieChart size={22} />
               <div>
-                <span>Total Votes</span>
+                <span>Total Votes - </span>
                 <strong>{totalVotes}</strong>
               </div>
             </div>
