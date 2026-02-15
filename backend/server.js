@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: "https://votex-lyart.vercel.app/",
+    origin: "https://votex-lyart.vercel.app",
     credentials: true
   })
 );
